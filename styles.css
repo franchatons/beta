@@ -1,0 +1,223 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #222;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-image: url('https://cdn.cgdream.ai/_next/image?url=https%3A%2F%2Fapi.cgdream.ai%2Frails%2Factive_storage%2Fblobs%2Fredirect%2FeyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBd2JQRFE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ%3D%3D--8ccc3aa64b536d124836035e929a2fe9099ccea2%2F937d802e-8025-415e-8e0e-d003b28c801d_0.png&w=1080&q=95');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.container {
+    max-width: 400px;
+    width: 100%;
+    padding: 1rem;
+}
+
+.header {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 1rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(108, 92, 231, 0.8);
+}
+
+.header h1 {
+    font-size: 1.5rem;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tasks {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(108, 92, 231, 0.8);
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.tasks h2 {
+    color: gold;
+    font-size: 1.3rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    border: 2px solid black;
+    padding: 0.5rem;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+.tasks ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.tasks li {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.tasks h3 {
+    color: #fff;
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.tasks p {
+    color: #ccc;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.task-link {
+    display: inline-block;
+    background-color: #6c5ce7;
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+    border: 2px solid transparent;
+    box-shadow: 0 4px 6px rgba(108, 92, 231, 0.8);
+    margin-top: 0.5rem;
+}
+
+.task-link:hover {
+    background-color: #4834d4;
+    border-color: #fff;
+}
+
+.task-link:visited {
+    background-color: #4834d4;
+}
+
+.coins {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(108, 92, 231, 0.8);
+    width: 100%;
+    text-align: center;
+}
+
+.coins h2 {
+    color: #ffff;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    border: 3px solid black;
+    padding: 0.8rem 1.5rem;
+    border-radius: 10px;
+    display: inline-block;
+    box-shadow: 0 4px 6px rgba(108, 92, 231, 0.8);
+}
+
+#coin-count {
+    font-size: 1.5rem;
+    color: gold;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    border: 2px solid black;
+    padding: 0.3rem 0.6rem;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+#add-point {
+    background: none;
+    border: none;
+    padding: 0;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    display: block;
+    margin: 0 auto 1rem auto;
+    box-shadow: 0 4px 6px rgba(255, 0, 0, 0.8);
+}
+
+#add-point img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+#add-point.clicked {
+    animation: bounce-click 0.3s;
+}
+
+@keyframes bounce-click {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+#claim-coins {
+    background-color: #6c5ce7;
+    color: #fff;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    max-width: 300px;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 4px 6px rgba(108, 92, 231, 0.8);
+}
+
+#claim-coins:hover {
+    background-color: #4834d4;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 2rem;
+    color: #ccc;
+}
+
+.footer p {
+    margin-bottom: 1rem;
+}
+
+.social-icons a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: gold;
+}

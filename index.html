@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMART COIN's</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>SMART COIN's</h1>
+        </div>
+
+        <div class="main">
+            <div class="tasks">
+                <h2>COMPLETA LAS SIGUIENTES TAREAS PARA GANAR MONEDAS</h2>
+                <ul>
+                    <li>
+                        <h3>Tarea 1</h3>
+                        <p>Descripción de la tarea 1.</p>
+                        <a href="https://www.youtube.com/@DinoplanetaKids" class="task-link" target="_blank">💰Enlace a la tarea 1<span class="claim-text">💰</span></a>
+                    </li>
+                    <li>
+                        <h3>Tarea 2</h3>
+                        <p>Descripción de la tarea 2.</p>
+                        <a href="https://www.youtube.com/@franchatons5772" class="task-link" target="_blank">💰Enlace a la tarea 2<span class="claim-text">💰</span></a>
+                    </li>
+                    <li>
+                        <h3>Tarea 3</h3>
+                        <p>Descripción de la tarea 3.</p>
+                        <a href="https://www.instagram.com/ofer.travel/" class="task-link" target="_blank">💰Enlace a la tarea 3<span class="claim-text">💰</span></a>
+                    </li>
+                    <li>
+                        <h3>Tarea 4</h3>
+                        <p>Descripción de la tarea 4.</p>
+                        <a href="https://www.instagram.com/ofer.travel/" class="task-link" target="_blank">Enlace a la tarea 4<span class="claim-text">💰</span></a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="coins">
+                <h2>TUS MONEDAS</h2>
+                <div id="coin-count">1000</div>
+                <button id="add-point" class="bounce">
+                    <img src="https://i.postimg.cc/Wpy1Stdz/Picsart-24-06-24-06-19-58-642.png" alt="Añadir punto">
+                </button>
+                <button id="claim-coins">Reclamar Monedas</button>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2024 SMART COIN's. Todos los derechos reservados.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.task-link').forEach(link => {
+            // Inicializar el contador de clics para cada enlace
+            link.dataset.clicks = 0;
+
+            link.addEventListener('click', function(event) {
+                event.preventDefault(); // Prevenir el comportamiento predeterminado del enlace
+                
+                // Obtener el número actual de clics en este enlace
+                let clicks = parseInt(link.dataset.clicks);
+
+                if (clicks === 0) {
+                    // Primer clic: redirigir al enlace original
+                    window.open(this.href, '_blank');
+                    // Incrementar el contador de clics
+                    link.dataset.clicks = 1;
+                } else {
+                    // Segundo clic o más: sumar 180 puntos y cambiar texto
+                    var coinCount = document.getElementById('coin-count');
+                    coinCount.innerText = parseInt(coinCount.innerText) + 180; // Sumar 180 puntos
+                    link.innerHTML = 'COBRADO<span class="claim-text">💰</span>'; // Cambiar el texto del enlace
+                    link.style.backgroundColor = '#f0d94c'; // Cambiar el color de fondo del enlace
+                    link.style.pointerEvents = 'none'; // Deshabilitar futuros clics en el enlace
+                }
+            });
+        });
+
+        document.getElementById('add-point').addEventListener('click', function() {
+            var coinCount = document.getElementById('coin-count');
+            coinCount.innerText = parseInt(coinCount.innerText) + 1;
+            this.classList.add('clicked');
+            setTimeout(() => {
+                this.classList.remove('clicked');
+            }, 300); // Duración de la animación
+        });
+    </script>
+</body>
+</html>
